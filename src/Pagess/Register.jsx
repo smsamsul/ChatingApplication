@@ -119,7 +119,7 @@ setregError({...regError, [e.target.name]: "" })
         }
     <div className='passwardeye'>
       
-    <TextField name='password' label="Password"
+    <TextField  name='password' label="Password"
     color="secondary" focused 
     value={regdata.password}
     autoComplete="new-password"
