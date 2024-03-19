@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    
+}
+.regimg{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.regbox{
+    margin-left: auto;
+    width: 497px;
+    margin-top: 225px;
+}
+.passwardeye{
+    position: relative;
+    width: 90%;
+}
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 100%;
+    padding: 25px 0 !important;
+}
+.css-179z3gj-MuiFormLabel-root-MuiInputLabel-root.Mui-focused{
+    color: #11175D !important;
+  padding-top: 20px !important;
+}
+.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused 
+.MuiOutlinedInput-notchedOutline{
+    border-color: #11175D !important;
+}
+.css-sghohy-MuiButtonBase-root-MuiButton-root{
+    padding: 19px 158px !important;
+
+    border-radius: 86px !important;
+   
+}
+.bt{
+    text-align: center;
+}
+.center{
+    text-align: center;
+    margin-top: 30px;
+}
+.center1{
+    color: red;
+  
+}
+.css-svzhua-MuiPaper-root-MuiAlert-root{
+    width: 85% !important;
+}
+
+
+
+.eye{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 17px;
+    color: #11175D;
+}
