@@ -158,7 +158,7 @@ setregError({...regError, [e.target.name]: "" })
       </div>
     
         <p className='center'>Already  have an account ?  
-        <Link className='center1' to="#"> Sign In</Link></p>
+        <Link className='center1' to="/Login"> Sign In</Link></p>
 
        </div>
     </Grid>

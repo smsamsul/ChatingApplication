@@ -146,10 +146,15 @@ setregError({...regError, [e.target.name]: "" })
      middleLineColor=""
      lastLineColor=""
   /> }
+      
       </div>
+      <div className='forgot'>
+      <Link  to="/Forgot"> Forgot passward </Link>
+      </div>
+      
     
         <p className='center'>Don’t have an account ? Sign up ?  
-        <Link className='center1' to="#"> Sign up</Link></p>
+        <Link className='center1' to="/"> Sign up</Link></p>
 
        </div>
     </Grid>
