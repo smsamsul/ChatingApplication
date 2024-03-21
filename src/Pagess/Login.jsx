@@ -11,7 +11,8 @@ import { LineWave } from 'react-loader-spinner'
 import {  toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, 
-  sendEmailVerification,signInWithEmailAndPassword } from "firebase/auth";
+  sendEmailVerification,signInWithEmailAndPassword,
+  GoogleAuthProvider,signInWithPopup, } from "firebase/auth";
 
 const Login = () => {
 
@@ -64,13 +65,25 @@ setregError({...regError, [e.target.name]: "" })
       signInWithEmailAndPassword(auth, regdata.email, regdata.password)
           .then((userCredential) => {
               setloading(false);
-              const auth = getAuth();
-              toast.success('Login successful ', {
-                position: "top-center"
-            }
+              if(!userCredential.user.emailVerified){
+                toast.error('please veryfied your email ', {
+                  position: "top-center"
+              }
+              
+              );
+
+              }
+              else{
+                toast.success('Login successful ', {
+                  position: "top-center"
+              }
+              
+              );
+              navigate("/Home")
+
+              }
+              // const auth = getAuth();
             
-            );
-            navigate("/Home")
             setregdata({ email: "", name: "", password: "" });
 
               sendEmailVerification(auth.currentUser)
@@ -92,10 +105,34 @@ setregError({...regError, [e.target.name]: "" })
   }
 };
 
+const handlleGlogin = () => { 
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    toast.success('Login successful ', {
+    position: "top-center"
+  }
+  
+  );
+  navigate("/Home/Feed")
+   
+  })
+  .catch((error) => {
+    console.log(error)
+  });
+}
+
   return (
     <Grid container spacing={4}>
     <Grid  xs={6}>
-       <div className='regbox'>
+       <div  className='regbox'>
+        <div onClick={handlleGlogin}>
+        <Image imgsrc="assets/Google.png" >
+      
+      </Image >
+
+        </div>
+      
         <h2>Login to your account!</h2>
         <div className='passwardeye'>
         <TextField name="email" label=" Email Address" 
@@ -151,8 +188,7 @@ setregError({...regError, [e.target.name]: "" })
       <div className='forgot'>
       <Link  to="/Forgot"> Forgot passward </Link>
       </div>
-      
-    
+
         <p className='center'>Don’t have an account ? Sign up ?  
         <Link className='center1' to="/"> Sign up</Link></p>
 

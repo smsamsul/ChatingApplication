@@ -11,6 +11,9 @@ import Login from "./Pagess/Login";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ForgotPasswart from "./Pagess/ForgotPasswart";
+import Meassage from "./Pagess/Meassage";
+import Setting from "./Pagess/Setting";
+import Feed from "./Pagess/Feed";
 
 function App() {
   const router = createBrowserRouter(
@@ -21,9 +24,17 @@ function App() {
 
     <Route path="/Login" element={<Login />}> </Route>
 
-    <Route path="/Home" element={<Home />}> </Route>
-    
     <Route path="/Forgot" element={<ForgotPasswart />}> </Route>
+
+    <Route path="/Home" element={<Home/>}> 
+
+    <Route path="Feed" element={<Feed/>}> </Route>
+
+    <Route path="Meassage" element={<Meassage/>}> </Route>
+
+    <Route path="Setting" element={<Setting />}> </Route>
+
+    </Route>
     </>
   
   

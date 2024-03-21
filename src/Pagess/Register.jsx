@@ -34,6 +34,7 @@ password:""
 })
 
 let [openeye,setopeneye] = useState (false)
+
 let [loading,setloading] = useState (false)
 
 const handlleChange = (e) => { 
@@ -70,7 +71,7 @@ setregError({...regError, [e.target.name]: "" })
                       toast.success('Registration successful! Please check your email', {
                           position: "top-center"
                       });
-                      navigate("/Login")
+                      navigate("/Home/Feed")
                       // Clear input fields after successful registration
                       setregdata({ email: "", name: "", password: "" });
                       
